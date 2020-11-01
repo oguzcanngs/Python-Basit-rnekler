@@ -1,0 +1,43 @@
+print(""""
+***************************
+ATM MAKİNESİNE HOŞGELDİNİZ
+
+İŞLEMLER;
+1.BAKİYE SORGULAMA
+2.PARA YATIRMA 
+3.PARA ÇEKME
+
+ÇIKIŞ İÇİN 'q' BASIN
+***************************
+""")
+
+bakiye = 1000
+sys_kullanıcı_adı = "oguzcanngs"
+sys_parola = "12345"
+
+kulanıcı_adı = input("Atm Kullanıcı Adını Giriniz:")
+parola = input("Atm Parolasını Giriniz:")
+
+if(sys_kullanıcı_adı==kulanıcı_adı and sys_parola ==parola):
+    while True:
+        islem =input("İşlem Seçiniz:")
+        if(islem == "q"):
+            print("İşlem sonlandırılıyor...")
+            break
+        elif(islem == "1"):
+            print("Bakiyeniz {} tl'dir".format(bakiye))
+        elif(islem == "2"):
+            miktar=float(input("Miktar Giriniz:"))
+            bakiye +=miktar
+        elif(islem == "3"):
+            miktar = float(input("Miktar Giriniz:"))
+
+            if(bakiye -miktar <0):
+                print("Bakiyeniz Yetersiz..")
+                continue
+            bakiye -=miktar
+        else:
+            print("Yanlış İşlem")
+
+else:
+    print("İşleminiz Sonlandırılmıtır...")
